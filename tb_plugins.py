@@ -4,7 +4,7 @@ Tensorboard plugins.
 # @Author: abhijit
 # @Date:   2018-08-04T08:30:07+05:30
 # @Last modified by:   abhijit
-# @Last modified time: 2018-08-04T09:47:32+05:30
+# @Last modified time: 2018-08-04T10:03:56+05:30
 """
 
 from __future__ import print_function
@@ -50,7 +50,7 @@ class TB_Projector(object):
         with open(self.metadata_path, 'w') as f:
             f.write("Index\tLabel\n")
             for index, label in enumerate(self.labels):
-                f.write("%d\t%d\n" % (index, label))
+                f.write("{}\t{}\n".format(index, label))
         if sprite_image is not None:
             assert len(single_sprite_image_dim) == 2, "single_sprite_image_dim must be a list of 2 nums eg: [28,28] for mnist"
             embedding.sprite.image_path = "spriteimage.png"
